@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kavitha | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+  // Hamburger toggle
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Scroll active link
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-item");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navItems.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="logo"><i class="fas fa-code"></i> <span>KAVITHA J</span></div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#resume" class="nav-item">Resume</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  
+  <section id="home" class="hero">
+    <div>
+      <h1>Hello, I'm <span>KAVITHA</span></h1>
+      <p>B.Tech CSE Student | Web Developer | Data Science Enthusiast</p>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="pflimage.jpeg" alt="Kavitha">
+      <p>I'm a B.Tech CSE student at Andhra Loyola Institute of Engineering and Technology. Passionate about web development, data science, and building digital solutions that make an impact. Always eager to learn and grow in the tech world.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React (Basics)</li>
+      <li>Python</li>
+      <li>Java</li>
+      <li>SQL</li>
+      <li>C, C++</li>
+      <li>Git & GitHub</li>
+      <li>Excel</li>
+      <li>Power BI</li>
+      <li>Pandas & NumPy</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Consortium Navigator</h3>
+        <p>A consultancy directory platform for students to find services like visa help and study abroad guidance. Includes ratings, filters, and easy navigation.</p>
+      </div>
+      <div class="project">
+        <h3>College Companion</h3>
+        <p>Centralized academic portal for autonomous colleges with subject-wise materials, event updates, forums, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Download my resume to learn more about my background and experiences.</p>
+    <a href="kavi.pdf" class="btn" target="_blank" download>📄 Download Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>📧 Email: <a href="mailto:kavithanarayan573@gmail.com">kavithanarayan573@gmail.com</a></p>
+    <p>📞 Phone: +91</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/j-kavitha" target="_blank" class="social-link linkedin">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/k1j-kavitha" target="_blank" class="social-link github">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>    
+  </section>
+
+  <footer>
+    <p>© 2025 Kavitha J. Built with 💖</p>
+  </footer>
+</body>
+</html>
